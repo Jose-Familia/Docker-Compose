@@ -1,19 +1,7 @@
-version: "3"
+version:  '2.5'
 services:
-  website:
-   image: nginx
-   ports:
-     - "8081:80"
-  website2:
-    image: nginx
-    ports:
-     - "8082:80"
-    networks:
-     familia:
-        ipv4_address: 192.168.92.21
-networks:
-  familia:
-    ipam:
-      driver: default
-      config:
-        - subnet: "192.168.92.0/24"
+        ubuntuimage:
+                    container_name: familiacontainer
+                    build:
+                          context: .
+                          dockerfile: Dockerfile
